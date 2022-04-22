@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Icon, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, Icon, Image } from "@chakra-ui/react";
 import Link from "next/link";
 import { FiChevronLeft} from 'react-icons/fi';
 
@@ -6,39 +6,36 @@ interface HeaderProps {
     hasBack?: boolean;
 }
 
-export function Header({ hasBack = false }: HeaderProps){
+export function Header() {
     return(
-        <Box w="100%">
-            <Flex
-                w="100%"
-                maxWidth={1160}
-                align="center"
-                justify="space-between"
-                py="7"
-                px={{base: '4', xl: 0}}
+        <Flex
+            as="header"
+            bg="white"
+            w="100%"
+            mx="auto"
+            px="1rem"
+            h={["50px", "188px"]}
+            align="center"
+            justify="center"
+        >
+            <Grid
+                h="100%"
                 mx="auto"
+                w="100%"
+                maxW="1160px"
+                alignItems="center"
+                templateColumns="repeat(3, 1fr)"
+                justifyContent="center"
             >
-                { hasBack ? (
-                    <Link href="/">
-                    <Button
-                        rounded="50%"
-                        h="10"
-                        w="8"
-                        colorScheme="telegram"
-                        variant="ghost"
-                    >
-                        <Icon as={FiChevronLeft}
-                        h="6"
-                        w="6"
-                        color="gray.900"/>
-                    </Button>
-                </Link>
-                ) : (
-                    <Box/>
-                )}
-                <Image src="/assets/logo.svg" alt="WorldTrip" />
-                <Box />
-            </Flex>
-        </Box>
+                <Image 
+                    src="/assets/logo.svg" 
+                    alt="WorldTrip" 
+                    w={["81px", "184px"]}
+                    justifySelf="center"
+                    gridColumn="2"
+                />
+            </Grid>
+
+        </Flex>
     )
 }

@@ -1,27 +1,33 @@
 //Este arquivo é criado para definir os próprios 
 //temas que não tiver no chakra da aplicação
-
 import { extendTheme} from "@chakra-ui/react";
 
 const theme = extendTheme({
-    styles: {
-        global: {
-        body: {
-            bg: "white.900",
-            color: "gray.50"
-        }
+    colors: {
+        gray: {
+            "700": "#47585B",
+            "500": "#999999",
+            "400": "rgba(153, 153, 153, 0.5)",
+            "300": "#DADADA",
+            "100": "#F5F8FA"
         },
-        colors: {
-            '900': '#47585B',
-            '800': '#999999',
-            '100': '#DADADA',
-            '50': '#F5F8FA',
+        yellow: {
+            "400": "#FFBA08",
+            "300": "rgba(255, 186, 8,0.5)"
+            }
         },
         fonts: {
-        heading: 'Roboto',
-        body: 'Roboto', 
+            heading: 'Poppins',
+            body: 'Poppins'
+        },
+        styles: {
+            global: {
+            body: {
+                bg: 'gray.100',
+                color: 'gray.700'
+            }
+            }
         }
-    }
     });
 
 export default theme

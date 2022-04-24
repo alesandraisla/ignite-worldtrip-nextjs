@@ -1,8 +1,33 @@
 import { Flex } from "@chakra-ui/react";
+import { Cities } from "../../components/Cities";
+import { Content } from "../../components/content";
 import { ContinentBanner } from "../../components/continentBanner";
 import { Header } from "../../components/Header";
 
-export default function Continent() {
+export interface ContinentProps {
+    continent: {
+        slug: string;
+        title: string;
+        description: string;
+        banner_image: string;
+        countries: number;
+        languages: number;
+        cities: number;
+        cities_list: string;
+        cities100: { 
+            city: string;
+            country: string;
+            thumbnail: string;
+            flga: string;
+        }[]
+    }
+}
+
+export default function Continent({continent}: ContinentProps) {
+    // const router = useRouter();
+    // if(router.isFallback) {
+    //      return <Loading />
+    // }
     return(
         <Flex direction="column">
             <Header />
@@ -14,7 +39,8 @@ export default function Continent() {
                 mb="10"
                 px="1rem"
             >
-                <Continent />
+                <Content />
+                <Cities />
             </Flex>
         </Flex>
     )
